@@ -3855,3 +3855,16 @@ define Device/zyxel_wsm20
   KERNEL_INITRAMFS := kernel-bin | lzma | fit lzma $$(KDIR)/image-$$(firstword $$(DEVICE_DTS)).dtb | znet-header V1.00(ABZF.0)C0
 endef
 TARGET_DEVICES += zyxel_wsm20
+
+define Device/cudy_wr1300s
+  $(Device/dsa-migration)
+  $(Device/mt7621-16m)
+  IMAGE_SIZE := 15872k
+  DEVICE_VENDOR := Cudy
+  DEVICE_MODEL := WR1300S
+  DEVICE_DTS := mt7621_cudy_wr1300s
+  DEVICE_PACKAGES := kmod-mt7603 kmod-mt7615e kmod-mt7615-firmware \
+	mt7663-firmware-ap wpad-basic-mbedtls opkg \
+	kmod-usb3 kmod-usb-storage usbutils kmod-fs-vfat
+endef
+TARGET_DEVICES += cudy_wr1300s

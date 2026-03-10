@@ -190,6 +190,9 @@ ramips_setup_interfaces()
 	ruijie,rg-ew1200g-pro-v1.1)
 		ucidef_set_interfaces_lan_wan "lan3 lan2 lan1" "wan"
 		;;
+	cudy,wr1300s)
+                ucidef_set_interfaces_lan_wan "lan1 lan2 lan3 lan4" "wan"
+		;;
 	*)
 		ucidef_set_interfaces_lan_wan "lan1 lan2 lan3 lan4" "wan"
 		;;

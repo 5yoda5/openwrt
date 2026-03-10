@@ -22,7 +22,9 @@
 		regulator-min-microvolt = <5000000>;
 		regulator-max-microvolt = <5000000>;
 		gpios = <&gpio 7 GPIO_ACTIVE_HIGH>;
+		regulator-boot-on;
 		regulator-always-on;
+		enable-active-high;
 	};
 
 	leds {
@@ -162,6 +164,8 @@
 		compatible = "mediatek,mt7603";
 		reg = <0x0000 0 0 0 0>;
 		mediatek,mtd-eeprom = <&factory 0x0000>;
+		nvmem-cells = <&macaddr_bdinfo_de00>;
+		nvmem-cell-names = "mac-address";
 	};
 };
 
@@ -172,6 +176,8 @@
 		reg = <0x0000 0 0 0 0>;
 		mediatek,mtd-eeprom = <&factory 0x8000>;
 		mediatek,disable-aspm;
+		nvmem-cells = <&macaddr_bdinfo_de00>;
+		nvmem-cell-names = "mac-address";
 	};
 };
 

@@ -3865,6 +3865,7 @@ define Device/cudy_wr1300s
   DEVICE_DTS := mt7621_cudy_wr1300s
   DEVICE_PACKAGES := kmod-mt7603 kmod-mt7615e kmod-mt7615-firmware \
 	mt7663-firmware-ap wpad-basic-mbedtls opkg \
-	kmod-usb3 kmod-usb-storage usbutils kmod-fs-vfat
+	kmod-usb3 kmod-usb-storage usbutils kmod-fs-vfat \
+	block-mount kmod-fs-ext4 kmod-fs-ntfs3
 endef
 TARGET_DEVICES += cudy_wr1300s
